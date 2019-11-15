@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Roza | Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="w-25 mx-auto" style="margin-top:200px">
+    <form action="/users/login" method="post">
+        <div class="form-group">
+            <label for="email">Email address:</label>
+            <input id="email" type="email" name="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input id="password" type="password" name="password" class="form-control" required>
+        </div>
+        <div class="custom-control custom-checkbox mb-3">
+            <input id="rememberMe" type="checkbox" class="custom-control-input">
+            <label for="rememberMe" class="form-check-label custom-control-label">
+                Remember me
+            </label>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-xs-4" style="margin-top: 10px">
+            <button id="createAccount" class="btn btn-link">Don't have an account?</button>
+        </div>
+        <div class="col-xs-4" style="margin-left: 70px; margin-top: 10px">
+            <button id="passwordReset" class="btn btn-link">Forgot password?</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
