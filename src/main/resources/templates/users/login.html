@@ -6,7 +6,6 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Roza | Login</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="w-25 mx-auto" style="margin-top:200px">
@@ -20,8 +19,8 @@
             <input id="password" type="password" name="password" class="form-control" required>
         </div>
         <div class="custom-control custom-checkbox mb-3">
-            <input id="rememberMe" class="custom-control-input" type="checkbox">
-            <label class="form-check-label custom-control-label" for="rememberMe">
+            <input id="rememberMe" type="checkbox" class="custom-control-input">
+            <label for="rememberMe" class="form-check-label custom-control-label">
                 Remember me
             </label>
         </div>
@@ -33,14 +32,10 @@
     </form>
     <div class="row">
         <div class="col-xs-4" style="margin-top: 10px">
-            <form action="/users/register" method="get">
-                <button type="submit" class="btn btn-link">Don't have an account?</button>
-            </form>
+            <button id="createAccount" class="btn btn-link">Don't have an account?</button>
         </div>
         <div class="col-xs-4" style="margin-left: 70px; margin-top: 10px">
-            <form action="/users/register" method="get">
-                <button type="submit" class="btn btn-link">Forgot password?</button>
-            </form>
+            <button id="passwordReset" class="btn btn-link">Forgot password?</button>
         </div>
     </div>
 </div>
