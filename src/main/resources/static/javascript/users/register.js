@@ -5,6 +5,14 @@ const confirmPassword = document.getElementById("confirmPassword");
 const secretAnswer = document.getElementById("secretAnswer");
 const theForm = document.getElementById("theForm");
 
+
+/**
+ * This method creates small element.
+ *
+ * @param innerText is the text for the element.
+ * @param id is the element's Id.
+ * @param parentId is the element's parent Id.
+ */
 function createSmallElement(innerText, id, parentId) {
     const small = document.createElement("small");
     small.innerText = innerText;
@@ -13,6 +21,17 @@ function createSmallElement(innerText, id, parentId) {
     document.getElementById(parentId).appendChild(small);
 }
 
+/**
+ * This method checks if input and confirmInput has the same value and if they do it destroys the small element.
+ * However if they have different values it checks
+ * if there is an existing small element and if it does not it creates one.
+ *
+ * @param input is the original input e.g. Email Address.
+ * @param confirmInput is the field that checks if inputs are the same e.g. Confirm Email Address.
+ * @param innerText is the text for the element.
+ * @param id is the element's Id.
+ * @param parentId is the element's parent Id.
+ */
 function displaySmallElement(input, confirmInput, innerText, id, parentId) {
     if (input.value !== confirmInput.value) {
         if (document.getElementById(id) === null) {
@@ -62,8 +81,6 @@ const validateSecretAnswer = function() {
 secretAnswer.addEventListener("change", validateSecretAnswer);
 
 theForm.addEventListener("submit", (event) => {
-
-
     if (email.value !== confirmEmail.value) {
         event.preventDefault();
         displaySmallElement(email, confirmEmail,
