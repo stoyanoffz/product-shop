@@ -6,30 +6,24 @@
     <base href="/"/>
     <meta name="viewport"
           content="width=device-width, users-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Roza | Register</title>
+    <title>Roza | Verify Token</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
 <div class="container" style="margin-top:30px">
     <div class="row align-items-center d-flex justify-content-center">
-        <form id="theForm" action="/api/users/register" method="post">
-            <div id="emailDiv" class="form-group">
-                <label for="email">Email address:</label>
-                <input id="email" type="email" name="email" value="" class="form-control" style="width:300px">
+        <form id="theForm" action="/users/verifytoken/" method="post">
+            <div id="tokenDiv" class="form-group">
+                <label for="token">Verification token:</label>
+                <input id="token" type="text" name="token" value="" class="form-control" style="width:300px">
             </div>
             <div class="row">
-                <div id="buttonDiv" class="col text-center">
+                <div class="col text-center">
                     <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </div>
         </form>
     </div>
-    <div class="row">
-        <div id="anchorsDiv" class="col d-flex justify-content-center" style="margin-top:20px">
-            <a href="/users/login">Already have an account?</a>
-        </div>
-    </div>
 </div>
 </body>
-<script type="text/javascript" th:src="@{js/register.js}"></script>
 </html>

@@ -1,10 +1,7 @@
-const email = document.getElementById("email");
-const confirmEmail = document.getElementById("confirmEmail");
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirmPassword");
 const secretAnswer = document.getElementById("secretAnswer");
 const theForm = document.getElementById("theForm");
-
 
 /**
  * This method creates small element.
@@ -42,11 +39,6 @@ function displaySmallElement(input, confirmInput, innerText, id, parentId) {
     }
 }
 
-confirmEmail.addEventListener("change", () => {
-    displaySmallElement(email, confirmEmail,
-                                    "Emails don't match!", "confirmEmailError", "confirmEmailDiv")
-});
-
 const validatePassword = function() {
     const hasUpperCase = /[A-Z]/.test(password.value);
     const hasNumbers = /\d+/.test(password.value);
@@ -81,29 +73,21 @@ const validateSecretAnswer = function() {
 secretAnswer.addEventListener("change", validateSecretAnswer);
 
 theForm.addEventListener("submit", (event) => {
-    if (email.value !== confirmEmail.value) {
-        event.preventDefault();
-        displaySmallElement(email, confirmEmail,
-                    "Emails don't match!", "confirmEmailError", "confirmEmailDiv");
-        return false;
-    }
+    event.preventDefault();
 
     if (password.value.length < 8) {
-        event.preventDefault();
         validatePassword;
-        return false;
     }
 
     if (password.value !== confirmPassword.value) {
-        event.preventDefault();
         displaySmallElement(password, confirmPassword,
-                    "Passwords don't match!", "confirmPasswordError", "confirmPasswordDiv");
-        return false;
+                    "Passwords don't match!",
+                    "confirmPasswordError", "confirmPasswordDiv");
     }
 
     if (password.value === secretAnswer.value) {
-        event.preventDefault();
         validateSecretAnswer;
-        return false;
     }
+
+     return false;
 });

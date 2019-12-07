@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:remove="all">Confirmation email</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<p>Click on the link below to verify your account email address.
+    The link will be available for 12 hours, after that your username will be removed.</p>
+<a th:href="@{${confirmationLink}}">
+    <p th:text="${confirmationLink}"></p>
+</a>
+</body>
+</html>
